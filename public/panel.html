@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Panel - Sistema CENT
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="panel.css"
+  >
+
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <div class="tech-bg">
+    <div class="grid"></div>
+    <div class="scanlines"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+
+  <div class="app">
+
+    <!-- =========================================
+         SIDEBAR
+         ========================================= -->
+
+    <aside
+      class="sidebar"
+      id="sidebar"
+    >
+
+      <div class="sidebar-top">
+
+        <div class="brand">
+
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            class="sidebar-logo"
+          >
+
+          <div class="brand-text">
+            <h2>CENT</h2>
+            <p>Sistema</p>
+          </div>
+
+        </div>
+
+
+        <button
+          class="toggle-btn"
+          id="toggleBtn"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+
+      <!-- =========================================
+           MENÚ PRINCIPAL
+           ========================================= -->
+
+      <nav class="menu">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+          href="#"
+          class="menu-link active"
+          data-section="dashboard"
+        >
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
+
+
+        <!-- =========================================
+             PACIENTES
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Pacientes"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-user-injured"></i>
+              <span>Pacientes</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="pacientes-admision"
+            >
+              Admisión
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="pacientes-lista"
+            >
+              Lista de pacientes
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="pacientes-no-atendidos"
+            >
+              Pacientes no atendidos
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             INVENTARIO
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Inventario"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-boxes-stacked"></i>
+              <span>Inventario</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="inventario-productos"
+            >
+              Registrar producto
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="inventario-entrada"
+            >
+              Entrada
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="inventario-salida"
+            >
+              Salida
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="inventario-stock"
+            >
+              Stock
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="inventario-traslados"
+            >
+              Traslados
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="inventario-kardex"
+            >
+              Kardex
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             COMPRAS
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Compras"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>Compras</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="compras-ingresar"
+            >
+              Ingresar compras
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="compras-consultar"
+            >
+              Consultar compras
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="compras-proveedores-registrar"
+            >
+              Registrar proveedores
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="compras-proveedores-consultar"
+            >
+              Consultar proveedores
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             REPORTES
+             IMPORTANTE:
+             SE AGREGÓ data-menu="Reportes"
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Reportes"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Reportes</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="reportes-pacientes"
+            >
+              Pacientes
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="reportes-inventario"
+            >
+              Inventario
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="reportes-quirofano"
+            >
+              Quirófano
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             HISTORIAS CLÍNICAS
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="H. Clínicas"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-notes-medical"></i>
+              <span>H. Clínicas</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="historias-clinicas"
+            >
+              Historias clínicas
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="hc-documentos-generados"
+            >
+              Documentos generados
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             DESCARGOS
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Descargos"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-crutch"></i>
+              <span>Descargos</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="descargos-registrar"
+            >
+              Registrar descargo
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="descargos-consultar"
+            >
+              Consultar descargos
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="descargos-consolidados"
+            >
+              Consultar descargos consolidados
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="descargos-consignacion"
+            >
+              Revisión insumos consignación
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="descargos-consignacion-enviados"
+            >
+              Historial consignación enviada
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             CAMPAÑAS
+             IMPORTANTE:
+             SE AGREGÓ data-menu="Campañas"
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Campañas"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-bullhorn"></i>
+              <span>Campañas</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="campanas-reclutadores"
+            >
+              Reclutadores
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             USUARIOS
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Usuarios"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-users"></i>
+              <span>Usuarios</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="usuarios-registrar"
+            >
+              Registrar usuario
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="usuarios-lista"
+            >
+              Lista de usuarios
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             CONFIGURACIONES
+             ========================================= -->
+
+        <div
+          class="menu-group"
+          data-menu="Configuraciones"
+        >
+
+          <button
+            class="menu-link submenu-toggle"
+            type="button"
+          >
+
+            <div class="menu-left">
+              <i class="fa-solid fa-gear"></i>
+              <span>Configuraciones</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down arrow"></i>
+
+          </button>
+
+
+          <div class="submenu">
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-archivo"
+            >
+              # Archivo
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-permisos"
+            >
+              Permisos
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-desplegables"
+            >
+              Registrar desplegables
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-diagnosticos-cie"
+            >
+              Diagnósticos CIE
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-procedimientos-medicos"
+            >
+              Nombres de procedimientos
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-profesionales-salud"
+            >
+              Profesionales de salud
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-historias-clinicas"
+            >
+              Configurar H. Clínicas
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-bodegas"
+            >
+              Bodegas
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-categorias-producto"
+            >
+              Categorias Producto
+            </a>
+
+            <a
+              href="#"
+              class="submenu-link"
+              data-section="config-casas"
+            >
+              Casas comerciales
+            </a>
+
+            <a
+                href="#"
+                class="submenu-link"
+                data-section="config-lapso-expiracion"
+              >
+                Lapso aviso fecha expiración
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================================
+             UTILIDADES
+             ========================================= -->
+
+        <div
+  class="menu-group"
+  data-menu="Utilidades"
+>
+
+  <button
+    class="menu-link submenu-toggle"
+    type="button"
+  >
+    <div class="menu-left">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <span>Utilidades</span>
+    </div>
+
+    <i class="fa-solid fa-chevron-down arrow"></i>
+  </button>
+
+
+  <div class="submenu">
+
+    <a
+      href="#"
+      class="submenu-link"
+      data-section="utilidades-importar"
+    >
+      Importar datos
+    </a>
+
+
+    <a
+      href="#"
+      class="submenu-link"
+      data-section="utilidades-control-expiracion"
+    >
+      Control fecha expiración
+    </a>
+
+
+    <a
+      href="#"
+      class="submenu-link"
+      data-section="utilidades-cuarentena"
+    >
+      Cuarentena
+    </a>
+
+  </div>
+
+</div>
+
+      </nav>
+
+
+      <!-- =========================================
+           CERRAR SESIÓN
+           ========================================= -->
+
+      <div class="sidebar-bottom">
+
+        <a
+          href="/logout"
+          class="logout-btn"
+        >
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Cerrar sesión</span>
+        </a>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+         ========================================= -->
+
+    <main class="main">
+
+      <header class="topbar">
+
+        <div>
+
+          <h1
+            id="tituloSeccion"
+            class="holo-title"
+          >
+            Dashboard
+          </h1>
+
+          <p id="subtituloSeccion">
+            Bienvenido al sistema CENT
+          </p>
+
+        </div>
+
+      </header>
+
+
+      <!-- =========================================
+           CARDS DASHBOARD
+           ========================================= -->
+
+      <section
+        class="cards"
+        id="cards"
+      >
+
+        <div class="card">
+
+          <i class="fa-solid fa-user-injured"></i>
+
+          <h3>
+            Pacientes
+          </h3>
+
+          <p>
+            Gestión y consulta de pacientes.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <i class="fa-solid fa-boxes-stacked"></i>
+
+          <h3>
+            Inventario
+          </h3>
+
+          <p>
+            Control de stock, ingresos y salidas.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <i class="fa-solid fa-file-lines"></i>
+
+          <h3>
+            Reportes
+          </h3>
+
+          <p>
+            Generación y consulta de reportes.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================================
+           PANEL DINÁMICO
+           ========================================= -->
+
+      <section
+        class="content-box"
+        id="panelBox"
+      >
+
+        <h2>
+          Dashboard
+        </h2>
+
+        <p>
+          Selecciona una opción del menú lateral para continuar.
+        </p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================================
+       LIBRERÍAS
+       ========================================= -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"
+  ></script>
+
+  <script src="panel.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"
+  ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Sistema CENT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tech-bg">
+    <div class="grid"></div>
+    <div class="scanlines"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+  </div>
+
+  <div class="login-wrapper">
+    <div class="login-container">
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+
+      <div class="logo-box">
+        <img src="/images/logo.png" alt="Logo" class="login-logo">
+      </div>
+
+      <h1>SISTEMA CENT</h1>
+      <p class="subtitle">Acceso seguro al sistema</p>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Usuario" required>
+        </div>
+
+        <div class="input-group password-group">
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button type="button" id="togglePassword" class="toggle-password">👁</button>
+        </div>
+
+        <button type="submit" class="btn-login">Ingresar</button>
+      </form>
+
+      <p id="mensaje"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
